@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>均豪 Howie</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: #222;
+    }
+
+    .navbar a.active {
+      background-color: #ff5500;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .content {
+      max-width: 800px;
+      width: 100%;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin: 50px 0 25px;
+      border-bottom: 2px solid #ff5500;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .intro {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    section {
+        padding-top: 60px;
+        margin-top: -60px;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .music-container {
+      margin-top: 40px;
+    }
+
+    .music-container p {
+      margin: 20px 0 10px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .music-container iframe {
+      width: 100%;
+      height: 166px;
+      margin-bottom: 30px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    #about p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    #contact {
+      margin-top: 60px;
+      padding: 40px 20px;
+      background-color: #eee;
+      border-radius: 8px;
+    }
+
+    #contact h2 {
+      margin-top: 0;
+      border-bottom: none;
+    }
+
+    #contact p {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #222;
+    }
+
+    #contact a {
+        color: #ff5500;
+        text-decoration: none;
+    }
+
+    #contact a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#videos" class="nav-link">Videos</a>
+    <a href="#music" class="nav-link">Music</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+
+  <div class="content">
+
+    <section id="home">
+      <h1>均豪 Howie</h1>
+      <p class="intro">陽光系男孩，喜歡自彈自唱，會編曲、錄音，喜歡用音樂交朋友。</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm Howie, a singer-songwriter and music arranger from Taiwan. I thrive on playing the guitar, singing, and creating music that connects with people. This website is my personal space to share my musical journey, including original compositions, arrangements, and various projects I've had the pleasure to work on. Welcome and I hope you enjoy the music! 🎶</p>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+      <h2>Videos</h2>
+      <div class="video-container">
+        <h3>Young Voice 選秀節目精彩片段</h3>
+        <iframe src="https://www.youtube.com/embed/UjMGFObhQJE" 
+                title="Young Voice 選秀節目精彩片段" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+
+      <div class="video-container">
+        <h3>主題曲編曲、作曲、製作</h3>
+        <iframe src="https://www.youtube.com/embed/bghUNsUK3k8" 
+                title="主題曲編曲、作曲、製作" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+
+      <div class="video-container">
+        <h3>劇場配樂編曲、作曲</h3>
+        <iframe src="https://www.youtube.com/embed/aoTC6w1vofg?start=303" 
+                title="劇場配樂編曲、作曲" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="music-container">
+      <h2>Listen to Some Music</h2>
+
+      <p>Project 1</p>
+      <iframe scrolling="no" allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/howie-l/project-1-2&color=%23ff5500">
+      </iframe>
+
+      <p>Project 2</p>
+      <iframe scrolling="no" allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/howie-l/project2-3&color=%23ff5500">
+      </iframe>
+
+      <p>Project 3</p>
+      <iframe scrolling="no" allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/howie-l/project3-4&color=%23ff5500">
+      </iframe>
+
+      <p>Project 4</p>
+      <iframe scrolling="no" allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/howie-l/project4-5&color=%23ff5500">
+      </iframe>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>IG: <a href="https://instagram.com/howie0918" target="_blank" rel="noopener noreferrer">@howie0918</a></p>
+    </section>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section');
+
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.4
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href').substring(1) === entry.target.id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, options);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+
+</body>
+</html>
