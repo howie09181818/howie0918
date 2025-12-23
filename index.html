@@ -1,265 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>均豪 Howie</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>均豪 JHAØ</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      scroll-behavior: smooth;
-    }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        scroll-behavior: smooth;
+      }
 
-    .navbar {
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      display: flex;
-      justify-content: center;
-      padding: 12px 0;
-      position: fixed;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(8px);
-    }
+      .navbar {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        padding: 12px 0;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(8px);
+      }
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      padding: 12px 20px;
-      transition: background 0.3s, color 0.3s;
-      font-weight: 500;
-    }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        transition: background 0.3s, color 0.3s;
+        font-weight: 500;
+      }
 
-    .navbar a:hover {
-      background-color: #fff;
-      color: #000;
-      border-radius: 4px;
-    }
+      .navbar a:hover {
+        background-color: #fff;
+        color: #000;
+        border-radius: 4px;
+      }
 
-    .navbar a.active {
-      background-color: #ff5500;
-      color: white;
-      font-weight: bold;
-      border-radius: 4px;
-    }
+      .navbar a.active {
+        background-color: #ff5500;
+        color: white;
+        font-weight: bold;
+        border-radius: 4px;
+      }
 
-    .hero {
-      height: 100vh;
-      background-image: url("https://raw.githubusercontent.com/howie09181818/howie0918/refs/heads/main/howie.JPG");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-    }
+      .hero {
+        height: 100vh;
+        background-image: url("https://raw.githubusercontent.com/howie09181818/howie0918/refs/heads/main/howie.JPG");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.45);
-      z-index: 1;
-    }
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1;
+      }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 20px;
-    }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 20px;
+      }
 
-    .hero h1 {
-      font-size: 3.2em;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    .hero p {
-      font-size: 1.4em;
-      color: #eee;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 80px 20px 40px;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 1.8em;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-
-    .video-container iframe {
-      width: 100%;
-      max-width: 100%;
-      height: 315px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-    }
-
-    .music-container {
-      margin-top: 40px;
-    }
-
-    .music-container p {
-      margin: 20px 0 10px;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-
-    .music-container iframe {
-      width: 100%;
-      height: 166px;
-      margin-bottom: 30px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-
-    #contact {
-      margin-top: 60px;
-      padding: 40px 20px;
-      background-color: #eee;
-      border-radius: 8px;
-    }
-
-    #contact h2 {
-      margin-bottom: 20px;
-    }
-
-    #contact p {
-      font-size: 1.2em;
-      font-weight: 600;
-      color: #222;
-    }
-
-    @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.2em;
+        font-size: 3.2em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
       }
 
       .hero p {
-        font-size: 1em;
+        font-size: 1.4em;
+        color: #eee;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
       }
-    }
-  </style>
-</head>
-<body>
 
-  <div class="navbar">
-    <a href="#home" class="nav-link active">Home</a>
-    <a href="#about" class="nav-link">About</a>
-    <a href="#videos" class="nav-link">Videos</a>
-    <a href="#music" class="nav-link">Music</a>
-    <a href="#contact" class="nav-link">Contact</a>
-  </div>
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 80px 20px 40px;
+        text-align: center;
+      }
 
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>均豪 Howie</h1>
-      <p>陽光系男孩，喜歡自彈自唱，會編曲、錄音，喜歡用音樂交朋友。</p>
-    </div>
-  </section>
+      h2 {
+        font-size: 1.8em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
 
-  <div class="content" id="about">
-    <h2>About</h2>
-    <p>Hello! I'm Howie, a singer-songwriter and arranger who loves to play and create music that connects people. This is my personal space to share videos and projects I’ve worked on. 🎶</p>
+      .video-container iframe {
+        width: 100%;
+        max-width: 100%;
+        height: 315px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+      }
 
-    <section id="videos">
-      <h2>Videos</h2>
-      <div class="video-container">
-        <h3>Young Voice 選秀節目精彩片段</h3>
-        <iframe src="https://www.youtube.com/embed/UjMGFObhQJE" allowfullscreen></iframe>
-      </div>
+      .music-container {
+        margin-top: 40px;
+      }
 
-      <div class="video-container">
-        <h3>主題曲編曲、作曲、製作</h3>
-        <iframe src="https://www.youtube.com/embed/bghUNsUK3k8" allowfullscreen></iframe>
-      </div>
+      .music-container p {
+        margin: 20px 0 10px;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
 
-      <div class="video-container">
-        <h3>劇場配樂編曲、作曲</h3>
-        <iframe src="https://www.youtube.com/embed/aoTC6w1vofg?start=303" allowfullscreen></iframe>
-      </div>
-    </section>
+      .music-container iframe {
+        width: 100%;
+        height: 166px;
+        margin-bottom: 30px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      }
 
-    <section id="music" class="music-container">
-      <h2>Listen to Some Music</h2>
+      #contact {
+        margin-top: 60px;
+        padding: 40px 20px;
+        background-color: #eee;
+        border-radius: 8px;
+      }
 
-      <p>Project 1</p>
-      <iframe scrolling="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/howie-l/project-1-2&color=%23ff5500"></iframe>
+      #contact h2 {
+        margin-bottom: 20px;
+      }
 
-      <p>Project 2</p>
-      <iframe scrolling="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/howie-l/project2-3&color=%23ff5500"></iframe>
+      #contact p {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #222;
+      }
 
-      <p>Project 3</p>
-      <iframe scrolling="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/howie-l/project3-4&color=%23ff5500"></iframe>
+      .resume-list {
+        padding-left: 5rem;
+        text-align: left;
+        position: relative;
+      }
 
-      <p>Project 4</p>
-      <iframe scrolling="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/howie-l/project4-5&color=%23ff5500"></iframe>
-    </section>
+      .resume-list li {
+        position: relative;
+        padding-left: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>IG: <a href="https://instagram.com/howie0918" target="_blank">@howie0918</a></p>
-    </section>
-  </div>
+      .resume-list strong {
+        font-weight: 600;
+      }
 
-  <script>
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = {
-      home: document.getElementById('home'),
-      about: document.getElementById('about'),
-      videos: document.getElementById('videos'),
-      music: document.getElementById('music'),
-      contact: document.getElementById('contact'),
-    };
+      .resume-list span {
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
 
-    function clearActive() {
-      navLinks.forEach(link => link.classList.remove('active'));
-    }
+      @media (max-width: 768px) {
+        /* Hero */
+        .hero {
+          height: 70vh; /* 手機上高度稍微縮小 */
+        }
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        clearActive();
-        e.target.classList.add('active');
-      });
-    });
+        .hero h1 {
+          font-size: 2.2em;
+        }
 
-    window.addEventListener('scroll', () => {
-      const scrollPos = window.scrollY + 100;
-      let currentSection = 'home';
-      for (const [key, section] of Object.entries(sections)) {
-        if (section.offsetTop <= scrollPos) {
-          currentSection = key;
+        .hero p {
+          font-size: 1em;
+        }
+
+        .hero-content {
+          padding: 10px;
+        }
+
+        .navbar a {
+          padding: 8px 12px;
+          font-size: 0.9em;
+        }
+
+        .content {
+          padding: 60px 15px 30px;
+        }
+
+        h2 {
+          font-size: 1.5em;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        }
+
+        .video-container iframe {
+          height: 200px;
+        }
+
+        .music-container iframe {
+          height: 120px;
+        }
+
+        .music-container p {
+          font-size: 1em;
+        }
+
+        #contact {
+          padding: 30px 15px;
+        }
+
+        #contact h2 {
+          font-size: 1.5em;
+        }
+
+        #contact p {
+          font-size: 1em;
+        }
+
+        .resume-list {
+          padding-left: 2rem;
+        }
+
+        .resume-list li {
+          margin-bottom: 1rem;
+          padding-left: 0.5rem;
+          line-height: 1.4;
+        }
+
+        .resume-list span {
+          font-size: 0.8rem;
         }
       }
-      clearActive();
-      const activeLink = document.querySelector(`.nav-link[href="#${currentSection}"]`);
-      if (activeLink) activeLink.classList.add('active');
-    });
-  </script>
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#music" class="nav-link">Music</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
 
-</body>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>均豪 Howie</h1>
+        <p>陽光系男孩，喜歡自彈自唱，會編曲、錄音，喜歡用音樂交朋友。</p>
+      </div>
+    </section>
+
+    <div class="content" id="about">
+      <h2>About</h2>
+      <ul class="resume-list">
+        <li>
+          <strong>2007｜</strong>開始接觸古典鋼琴
+          <br />
+        </li>
+        <li>
+          <strong>2014｜</strong>開始接觸木吉他
+          <br />
+        </li>
+        <li>
+          <strong>2018｜</strong>開始寫歌
+          <br />
+        </li>
+        <li>
+          <strong>2019｜</strong>錄取國立台灣大學, 並獲得傅鐘獎學金
+          <br />
+        </li>
+        <li>
+          <strong>2021｜</strong>錄取紐約大學阿布達比分校,
+          音樂工程學系（錄取率<3%）
+          <br />
+        </li>
+        <li>
+          <strong>2023｜</strong>紐約大學紐約分校阿卡貝拉團
+          <br />
+        </li>
+        <li>
+          <strong>2024｜</strong>參與美國紐約百老匯 60 分鐘原創音樂劇
+          <br />
+          <iframe
+            allow="autoplay"
+            src="https://www.youtube.com/embed/5AgtIqGmUqY?start=1"
+            allowfullscreen
+          ></iframe>
+        </li>
+        <li>
+          <strong>2024｜</strong>第 28 屆聯合國氣候變遷會議 COP28
+          音樂短劇創作跟表演
+          <br />
+          <iframe
+            allow="autoplay"
+            src="https://www.youtube.com/embed/ILgBkzhxYUA?list=RDILgBkzhxYUA"
+            allowfullscreen
+          ></iframe>
+        </li>
+        <li>
+          <strong>2024｜</strong>幫助教育團隊完成團歌的編曲、作曲、寫詞、錄製
+          <br />
+          <iframe
+            allow="autoplay"
+            src="https://www.youtube.com/embed/bghUNsUK3k8?list=RDbghUNsUK3k8"
+            allowfullscreen
+          ></iframe>
+        </li>
+        <li>
+          <strong>2024｜</strong>劇場配樂作曲、編曲
+          <br />
+          <iframe
+            allow="autoplay"
+            src="https://www.youtube.com/embed/aoTC6w1vofg"
+            allowfullscreen
+          ></iframe>
+        </li>
+        <li>
+          <strong>2025｜</strong>參加大學聲選秀節目並進棚錄影, 成為全場首唱
+          <br />
+          <iframe
+            allow="autoplay"
+            src="https://www.youtube.com/embed/UjMGFObhQJE"
+            allowfullscreen
+          ></iframe>
+        </li>
+      </ul>
+
+      <section id="music" class="music-container">
+        <h2>Listen to Some Music</h2>
+
+        <p>Way哉台大</p>
+        <iframe
+          width="100%"
+          height="166"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2235169700&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        ></iframe>
+        <div
+          style="
+            font-size: 10px;
+            color: #cccccc;
+            line-break: anywhere;
+            word-break: normal;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+            font-weight: 100;
+          "
+        >
+          <a
+            href="https://soundcloud.com/howie-l"
+            title="均豪 JHAØ"
+            target="_blank"
+            style="color: #cccccc; text-decoration: none"
+            >均豪 JHAØ</a
+          >
+          ·
+          <a
+            href="https://soundcloud.com/howie-l/way"
+            title="Way哉台大"
+            target="_blank"
+            style="color: #cccccc; text-decoration: none"
+            >Way哉台大</a
+          >
+        </div>
+        <p>生命紙</p>
+        <iframe
+          width="100%"
+          height="166"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2235189785&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        ></iframe>
+        <div
+          style="
+            font-size: 10px;
+            color: #cccccc;
+            line-break: anywhere;
+            word-break: normal;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+            font-weight: 100;
+          "
+        >
+          <a
+            href="https://soundcloud.com/howie-l"
+            title="均豪 JHAØ"
+            target="_blank"
+            style="color: #cccccc; text-decoration: none"
+            >均豪 JHAØ</a
+          >
+          ·
+          <a
+            href="https://soundcloud.com/howie-l/24def30a-4674-4e83-aecc-8c6bf5abca9b"
+            title="生命紙"
+            target="_blank"
+            style="color: #cccccc; text-decoration: none"
+            >生命紙</a
+          >
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          YT:
+          <a
+            href="https://www.youtube.com/@jhao_official/featured"
+            target="_blank"
+            >JHAØ</a
+          >
+        </p>
+        <p>
+          IG:
+          <a href="https://www.instagram.com/this_is_jhao/" target="_blank"
+            >@this_is_jhao</a
+          >
+        </p>
+      </section>
+    </div>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = {
+        home: document.getElementById("home"),
+        about: document.getElementById("about"),
+        videos: document.getElementById("videos"),
+        music: document.getElementById("music"),
+        contact: document.getElementById("contact"),
+      };
+
+      function clearActive() {
+        navLinks.forEach((link) => link.classList.remove("active"));
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          clearActive();
+          e.target.classList.add("active");
+        });
+      });
+
+      window.addEventListener("scroll", () => {
+        const scrollPos = window.scrollY + 100;
+        let currentSection = "home";
+        for (const [key, section] of Object.entries(sections)) {
+          if (section.offsetTop <= scrollPos) {
+            currentSection = key;
+          }
+        }
+        clearActive();
+        const activeLink = document.querySelector(
+          `.nav-link[href="#${currentSection}"]`
+        );
+        if (activeLink) activeLink.classList.add("active");
+      });
+    </script>
+  </body>
 </html>
